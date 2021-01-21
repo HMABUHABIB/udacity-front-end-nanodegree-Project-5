@@ -8,32 +8,55 @@
   <body>
     <header>
       <h1>News Article With Natural Lang</h1>
+   
     </header>
 
     <main>
       <section>
         <form class="" onsubmit="return Client.handleSubmit(event)">
+          <label>Location:</label>
+    <input type="text" class="form-control" id="search_input" placeholder="Enter your destination" required/>
+   </div>
+  
+        <div id="date-field">
+
+          <label for="start">Start date:</label>
           <input
-            id="link"
-            type="text"
-            name="input"
-            value=""
-            placeholder="Please enter valid URL"
+            type="date"
+            id="start-date"
+            name="trip-start"
+            min="2020-01-01"
+            max="2025-12-31"
+            required
           />
+          <label for="end">End date:</label>
           <input
-            type="submit"
-            name=""
-            value="submit"
-            onclick="return Client.handleSubmit(event)"
-            onsubmit="return handleSubmit(event)"
+            type="date"
+            id="end-date"
+            name="trip-end"
+            min="2020-01-01"
+            max="2025-12-31"
+            required
           />
+         
+        </div>
+          
+        <input
+        type="submit"
+        name=""
+        id="submit"
+        value="submit"
+        onclick=""
+        onsubmit=""
+      />
         </form>
       </section>
 
+    
       <section>
-        <strong>Results:</strong>
-        <div id="results"></div>
+        <strong id="results">Hallo</strong>
       </section>
+
     </main>
 
     <footer>
@@ -43,5 +66,6 @@
         By:Husam Abuhabib
       </p>
     </footer>
+
   <script type="text/javascript" src="main.js"></script></body>
 </html>
