@@ -36,7 +36,13 @@ generateBtn.addEventListener('click', function (event) {
  handleSubmit(event)
 });
 
+document.addEventListener("click", removeListener);
+function removeListener(event) {
+ if (event.target.classList.contains("remove")) {
+  event.target.parentNode.remove();
+ }
 
+}
 
 export {
  generateTripCard,

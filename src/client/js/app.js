@@ -87,7 +87,7 @@ async function printtripInfo() {
 
  }
  else {
-  console.log(Client.tripsList);
+
   Client.generateTripCard(Client.tripsList[Client.tripsList.length - 1])
  }
 
