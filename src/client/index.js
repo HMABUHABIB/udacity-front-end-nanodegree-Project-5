@@ -1,33 +1,43 @@
-import { generateTable } from './js/generateTable'
+import { generateTripCard } from './js/generateTripCard'
 import { handleSubmit } from './js/formHandler'
-import { handleSend } from './js/app'
-import { today, tomorrow, changeDateFormat, numberOfDays } from './js/date'
+import { appfunction } from './js/app'
+import { today, tomorrow, maxStartDate, changeDateFormat, numberOfDays } from './js/date'
 
-
+import './media/facebook.png'
 import './styles/resets.scss'
 import './styles/base.scss'
 import './styles/footer.scss'
 import './styles/form.scss'
 import './styles/header.scss'
+import './styles/cards.scss'
 
 const startDate = document.querySelector('#start-date');
 const endDate = document.querySelector('#end-date');
-
+let tripsList = []
 document.addEventListener('DOMContentLoaded', (event) => {
+ document.cookie = "Secure";
+ document.cookie = "SameSite=None;"
+
  startDate.min = startDate.value = changeDateFormat(today)
+ startDate.max = maxStartDate
  endDate.min = endDate.value = changeDateFormat(tomorrow)
+ tripsList = []
 });
 
+
 const generateBtn = document.querySelector('#submit');
-generateBtn.addEventListener('click', function (e) {
- handleSubmit(e)
+generateBtn.addEventListener('click', function (event) {
+
+ handleSubmit(event)
 });
 
 
 
 export {
- generateTable,
+ generateTripCard,
  handleSubmit,
- today, tomorrow, changeDateFormat, numberOfDays
+ today, tomorrow, maxStartDate, changeDateFormat, numberOfDays, startDate, endDate,
+ tripsList, generateBtn,
+ appfunction
 
 }

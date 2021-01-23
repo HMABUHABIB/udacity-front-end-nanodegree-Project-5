@@ -13,10 +13,19 @@ describe('check the endpoint', () => {
   done()
  })
 
- it('gets the test endpoint', async done => {
-  const response = await request.post('/test2?zip=33615')
+ it('gets the endpoint /geonames with Bielefeld city', async done => {
+  const response = await request.get('/geonames?city=bielefeld')
   expect(response.status).toBe(200)
-  expect(response.body.zip).toBe('33615')
+  console.log(response.body.totalResultsCount > 0);
+  expect(response.body.totalResultsCount > 0).toBe(true)
+  done()
+ })
+
+ it('gets the endpoint /geonames with non-existed city', async done => {
+  const response = await request.get('/geonames?city=non-existed')
+  expect(response.status).toBe(200)
+  console.log(response.body.totalResultsCount > 0);
+  expect(response.body.totalResultsCount > 0).toBe(false)
   done()
  })
 })

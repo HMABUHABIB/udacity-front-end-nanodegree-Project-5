@@ -26,13 +26,24 @@ app.use(cors());
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
 })
-
+// Testing 
 app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
     console.log("samer");
 })
 
+app.get('/test2', async (req, res) => {
+    res.json({ message: 'pass!' })
+})
 
+app.post('/test2', async (req, res) => {
+    res.json({ zip: req.query.zip })
+})
+
+
+// RESTful API
+
+// openweathermap
 app.get('/openweathermap', async (req, res) => {
     try {
         const response = await axios.get('https://api.openweathermap.org/data/2.5/weather?zip=' + req.query.zip + '&appid=' + process.env.API_KEY + '&units=metric');
@@ -45,11 +56,12 @@ app.get('/openweathermap', async (req, res) => {
 })
 
 
-app.get('/meaningCloud', async (req, res) => {
+//geonames
 
+app.get('/geonames', async (req, res) => {
 
     try {
-        const response = await fetch('https://api.meaningcloud.com/sentiment-2.1?key=' + process.env.API_KEY_NLP + '&url=' + req.query.url + '&lang=en', {
+        const response = await fetch('http://api.geonames.org/searchJSON?q=' + req.query.city + '&maxRows=1&username=' + process.env.username_geonames + '', {
             method: 'POST',
             credentials: 'same-origin',
             headers: {
@@ -58,22 +70,50 @@ app.get('/meaningCloud', async (req, res) => {
         });
 
         const newData = await response.json();
+        console.log(req.query.city);
+        res.json(newData)
 
-        console.log(req.query.url);
-        res.send(newData)
     } catch (error) {
-        console.log("error", error);
+        console.log("geonames error", error);
     }
 })
 
-app.get('/test2', async (req, res) => {
-    res.json({ message: 'pass!' })
+
+
+//weatherbit
+
+app.get('/weatherbit', async (req, res) => {
+
+    try {
+        const response = await fetch('https://api.weatherbit.io/v2.0/forecast/daily?lat=' + req.query.lat + '&lon=' + req.query.lon + '&days=' + req.query.days + 1 + '&key=' + process.env.API_KEY_weatherbit + '', {
+            method: 'POST',
+            credentials: 'same-origin',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+
+        const newData = await response.json();
+        console.log(req.query.days);
+        res.json(newData.data[req.query.days])
+        console.log(newData)
+    } catch (error) {
+        console.log("weatherbit error", error);
+    }
 })
 
-app.post('/test2', async (req, res) => {
-    res.json({ zip: req.query.zip })
+
+// pixabay
+app.get('/pixabay', async (req, res) => {
+    try {
+        const response = await axios.get('https://pixabay.com/api/?q=' + req.query.place + '&key=' + process.env.API_KEY_Pixabay + '&image_type=photo');
+
+        res.send(response.data)
+    } catch (error) {
+
+        res.send('pixabay error')
+    }
+
 })
-
-
 
 module.exports = app

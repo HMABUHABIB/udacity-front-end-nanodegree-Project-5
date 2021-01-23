@@ -22,6 +22,17 @@ module.exports = {
             }, {
                 test: /\.scss$/,
                 use: ['style-loader', 'css-loader', 'sass-loader']
+            }, {
+                test: /\.(png|svg|jpe?g|gif)$/i,
+                exclude: ['/node_modules/', require.resolve('./src/client/index.js')], //Refer to SO page that discusses file-loader/HTML WP plugin conflicts
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'imgs',
+                        publicPath: 'imgs'
+                    }
+                }
             }
         ]
     },

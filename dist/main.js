@@ -112,6 +112,31 @@ ___CSS_LOADER_EXPORT___.push([module.i, "body {\n  display: grid;\n  grid-templa
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/client/styles/cards.scss":
+/*!*******************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/client/styles/cards.scss ***!
+  \*******************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
+// Module
+___CSS_LOADER_EXPORT___.push([module.i, "#card {\n  background-color: #444; }\n\n#cards {\n  background-color: blueviolet; }\n", "",{"version":3,"sources":["webpack://./src/client/styles/cards.scss"],"names":[],"mappings":"AAAA;EACE,sBAAsB,EAAA;;AAExB;EACE,4BAA4B,EAAA","sourcesContent":["#card {\n  background-color: #444;\n}\n#cards {\n  background-color: blueviolet;\n}\n"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/client/styles/footer.scss":
 /*!********************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/client/styles/footer.scss ***!
@@ -616,32 +641,43 @@ module.exports = function (list, options) {
 /*!*****************************!*\
   !*** ./src/client/index.js ***!
   \*****************************/
-/*! exports provided: generateTable, handleSubmit, today, tomorrow, changeDateFormat, numberOfDays */
+/*! exports provided: generateTripCard, handleSubmit, today, tomorrow, maxStartDate, changeDateFormat, numberOfDays, startDate, endDate, tripsList, generateBtn, appfunction */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _js_generateTable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/generateTable */ "./src/client/js/generateTable.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "generateTable", function() { return _js_generateTable__WEBPACK_IMPORTED_MODULE_0__["generateTable"]; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "startDate", function() { return startDate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "endDate", function() { return endDate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tripsList", function() { return tripsList; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "generateBtn", function() { return generateBtn; });
+/* harmony import */ var _js_generateTripCard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/generateTripCard */ "./src/client/js/generateTripCard.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "generateTripCard", function() { return _js_generateTripCard__WEBPACK_IMPORTED_MODULE_0__["generateTripCard"]; });
 
 /* harmony import */ var _js_formHandler__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/formHandler */ "./src/client/js/formHandler.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "handleSubmit", function() { return _js_formHandler__WEBPACK_IMPORTED_MODULE_1__["handleSubmit"]; });
 
 /* harmony import */ var _js_app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./js/app */ "./src/client/js/app.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "appfunction", function() { return _js_app__WEBPACK_IMPORTED_MODULE_2__["appfunction"]; });
+
 /* harmony import */ var _js_date__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./js/date */ "./src/client/js/date.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "today", function() { return _js_date__WEBPACK_IMPORTED_MODULE_3__["today"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "tomorrow", function() { return _js_date__WEBPACK_IMPORTED_MODULE_3__["tomorrow"]; });
 
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "maxStartDate", function() { return _js_date__WEBPACK_IMPORTED_MODULE_3__["maxStartDate"]; });
+
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "changeDateFormat", function() { return _js_date__WEBPACK_IMPORTED_MODULE_3__["changeDateFormat"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "numberOfDays", function() { return _js_date__WEBPACK_IMPORTED_MODULE_3__["numberOfDays"]; });
 
-/* harmony import */ var _styles_resets_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styles/resets.scss */ "./src/client/styles/resets.scss");
-/* harmony import */ var _styles_base_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles/base.scss */ "./src/client/styles/base.scss");
-/* harmony import */ var _styles_footer_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles/footer.scss */ "./src/client/styles/footer.scss");
-/* harmony import */ var _styles_form_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./styles/form.scss */ "./src/client/styles/form.scss");
-/* harmony import */ var _styles_header_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./styles/header.scss */ "./src/client/styles/header.scss");
+/* harmony import */ var _media_facebook_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./media/facebook.png */ "./src/client/media/facebook.png");
+/* harmony import */ var _styles_resets_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles/resets.scss */ "./src/client/styles/resets.scss");
+/* harmony import */ var _styles_base_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles/base.scss */ "./src/client/styles/base.scss");
+/* harmony import */ var _styles_footer_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./styles/footer.scss */ "./src/client/styles/footer.scss");
+/* harmony import */ var _styles_form_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./styles/form.scss */ "./src/client/styles/form.scss");
+/* harmony import */ var _styles_header_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./styles/header.scss */ "./src/client/styles/header.scss");
+/* harmony import */ var _styles_cards_scss__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./styles/cards.scss */ "./src/client/styles/cards.scss");
+
 
 
 
@@ -656,15 +692,22 @@ __webpack_require__.r(__webpack_exports__);
 
 const startDate = document.querySelector('#start-date');
 const endDate = document.querySelector('#end-date');
-
+let tripsList = []
 document.addEventListener('DOMContentLoaded', (event) => {
+ document.cookie = "Secure";
+ document.cookie = "SameSite=None;"
+
  startDate.min = startDate.value = Object(_js_date__WEBPACK_IMPORTED_MODULE_3__["changeDateFormat"])(_js_date__WEBPACK_IMPORTED_MODULE_3__["today"])
+ startDate.max = _js_date__WEBPACK_IMPORTED_MODULE_3__["maxStartDate"]
  endDate.min = endDate.value = Object(_js_date__WEBPACK_IMPORTED_MODULE_3__["changeDateFormat"])(_js_date__WEBPACK_IMPORTED_MODULE_3__["tomorrow"])
+ tripsList = []
 });
 
+
 const generateBtn = document.querySelector('#submit');
-generateBtn.addEventListener('click', function (e) {
- Object(_js_formHandler__WEBPACK_IMPORTED_MODULE_1__["handleSubmit"])(e)
+generateBtn.addEventListener('click', function (event) {
+
+ Object(_js_formHandler__WEBPACK_IMPORTED_MODULE_1__["handleSubmit"])(event)
 });
 
 
@@ -677,20 +720,94 @@ generateBtn.addEventListener('click', function (e) {
 /*!******************************!*\
   !*** ./src/client/js/app.js ***!
   \******************************/
-/*! exports provided: handleSend */
+/*! exports provided: appfunction */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "handleSend", function() { return handleSend; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "appfunction", function() { return appfunction; });
+
+let tripInfo;
+let serverLink = 'https://travel-app.glitch.me'
+//let serverLink = 'http://localhost:8081'
+
+const cityInput = document.getElementById('search_input');
+
+async function appfunction(event) {
+ tripInfo = { startDate: '', endDate: '', longOfTheTrip: '', howManyDaysWillStart: 'numberOfDays(today, startDate.value)', city: '', geonames: '', pixabay: '', weatherbit: '' }
+
+ geonames()
 
 
-function handleSend(event) {
- console.log(event.target);
- document.getElementById('results').innerHTML = 'samer'
- Client.temp.name = 'samer'
- console.log(Client.temp.name);
 };
+
+async function geonames() {
+
+ fetch('' + serverLink + '/geonames?city=' + cityInput.value + '')
+  .then(res => res.json())
+  .then(function (res) {
+   if (res.geonames.length > 0) {
+    Client.generateBtn.value = 'Loading ...'
+    Client.generateBtn.disabled = true;
+    tripInfo.city = cityInput.value
+    tripInfo.geonames = res.geonames[0]
+    tripInfo.startDate = Client.startDate.value
+    tripInfo.endDate = Client.endDate.value
+    tripInfo.howManyDaysWillStart = Client.numberOfDays(Client.today, Client.startDate.value)
+    tripInfo.longOfTheTrip = Client.numberOfDays(Client.startDate.value, Client.endDate.value)
+    return 1;
+   }
+   else {
+    alert('City not found')
+    return 1;
+   }
+
+  })
+  .then(weatherbit)
+
+}
+
+
+async function weatherbit() {
+
+ fetch('' + serverLink + '/weatherbit?lat=' + tripInfo.geonames.lat + '&lon=' + tripInfo.geonames.lng + '&days=' + tripInfo.howManyDaysWillStart + '')
+  .then(res => res.json())
+  .then(function (res) {
+   tripInfo.weatherbit = res
+  })
+  .then(pixabay(tripInfo.city))
+
+}
+
+async function pixabay(query) {
+
+ fetch('' + serverLink + '/pixabay?place=' + query + '')
+  .then(res => res.json())
+  .then(function (res) {
+   if (res.total == 0) {
+    pixabay(tripInfo.geonames.countryName)
+   }
+   else {
+    tripInfo.pixabay = res
+    Client.tripsList.push(tripInfo)
+    printtripInfo()
+   }
+  })
+}
+
+
+async function printtripInfo() {
+
+ if (!(tripInfo.weatherbit.max_temp)) {
+
+  setTimeout(printtripInfo, 2000)
+
+ }
+ else {
+  Client.generateTripCard(Client.tripsList[Client.tripsList.length - 1])
+ }
+
+}
 
 
 
@@ -700,29 +817,44 @@ function handleSend(event) {
 /*!*******************************!*\
   !*** ./src/client/js/date.js ***!
   \*******************************/
-/*! exports provided: today, tomorrow, changeDateFormat, numberOfDays */
+/*! exports provided: today, tomorrow, maxStartDate, changeDateFormat, numberOfDays */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "today", function() { return today; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tomorrow", function() { return tomorrow; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "maxStartDate", function() { return maxStartDate; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "changeDateFormat", function() { return changeDateFormat; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "numberOfDays", function() { return numberOfDays; });
 let today = new Date();
 let tomorrow = new Date();
 tomorrow.setDate(today.getDate() + 1);
-
+let maxStartDate = new Date();
+maxStartDate.setDate(today.getDate() + 15);
+maxStartDate = changeDateFormat(maxStartDate);
 const startDate = document.querySelector('#start-date');
 const endDate = document.querySelector('#end-date');
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
 
  startDate.addEventListener("change", function () {
   if (startDate.value < changeDateFormat(today)) {
+   alert("Sorry till now we can't travel to the past!")
    startDate.min = startDate.value = changeDateFormat(today)
   }
-  endDate.min = startDate.value
-  endDate.value = startDate.value
+  if (startDate.value > endDate.value) {
+   endDate.min = startDate.value
+   endDate.value = startDate.value
+  }
+  if (numberOfDays(changeDateFormat(today), startDate.value) > 15) {
+   alert('Please choose a start date for the trip within 16 days max.')
+   startDate.min = startDate.value = changeDateFormat(today)
+  }
+
+
  });
 
  endDate.addEventListener("change", function () {
@@ -733,7 +865,6 @@ document.addEventListener('DOMContentLoaded', function () {
  });
 
 });
-
 
 
 function changeDateFormat(date) {
@@ -772,67 +903,83 @@ function numberOfDays(startDate, endDate) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "handleSubmit", function() { return handleSubmit; });
-function handleSubmit(event) {
+
+const cityInput = document.getElementById('search_input');
+async function handleSubmit(event) {
     event.preventDefault()
-    console.log('handleSubmit')
-}
+    if (cityInput.value) {
+        Client.appfunction(event)
 
-/*const startDate = document.querySelector('#start-date');
-const endDate = document.querySelector('#end-date');
+    } else {
+        alert(`please the city field cannot be empty`)
 
-function handleSubmit(event) {
-    event.preventDefault()
-    document.getElementById('results').innerHTML = `Start date: ${startDate.value}  End date: ${endDate.value} How many days for start: ${Client.numberOfDays(Client.today, startDate.value)}  How long is the trip: ${Client.numberOfDays(startDate.value, endDate.value)} `
-    console.log(Client.numberOfDays(startDate.value, endDate.value))
-    startDate.min = Client.changeDateFormat(Client.today)
-    startDate.value = Client.changeDateFormat(Client.today)
-    endDate.min = Client.changeDateFormat(Client.tomorrow)
-    endDate.value = Client.changeDateFormat(Client.tomorrow)
-}
-
-startDate.onchange = function () {
-    endDate.min = startDate.value
-    endDate.value = startDate.value
-}
-
-endDate.onchange = function () {
-    console.log(endDate.value < startDate.value)
-    if (endDate.value < startDate.value) {
-        endDate.min = startDate.value
-        endDate.value = startDate.value
+        return;
     }
+
 }
-*/
+
+
+
 
 
 
 
 /***/ }),
 
-/***/ "./src/client/js/generateTable.js":
-/*!****************************************!*\
-  !*** ./src/client/js/generateTable.js ***!
-  \****************************************/
-/*! exports provided: generateTable */
+/***/ "./src/client/js/generateTripCard.js":
+/*!*******************************************!*\
+  !*** ./src/client/js/generateTripCard.js ***!
+  \*******************************************/
+/*! exports provided: generateTripCard */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "generateTable", function() { return generateTable; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "generateTripCard", function() { return generateTripCard; });
+const cityInput = document.getElementById('search_input');
+const section = document.getElementById('cards');
+let geonames = '', pixabay = '', weatherbit = '';
+
+function generateTripCard(card) {
+  //console.log(card);
+  geonames = card.geonames
+  pixabay = card.pixabay
+  weatherbit = card.weatherbit
+
+  section.innerHTML = `<section id="card" data-id="1">
+           <h2 id="results">${geonames.name}</h2>
+           <button class="remove" type="button">remove!</button>
+           <p>The trip start within :${card.howManyDaysWillStart} day/s in:${card.startDate} till:${card.endDate} for:${card.longOfTheTrip} day/s</p>
+           <p>Enjoy your stay in :${geonames.countryName}</p>
+           <p>Temp:${weatherbit.temp} Max temp: ${weatherbit.max_temp} Low temp: ${weatherbit.low_temp} </p>
+           <img src="${pixabay.hits[0].previewURL}" alt="Girl in a jacket" width="500" height="600">
+          
+         </section>`+ section.innerHTML;
+  cityInput.value = ''
+  Client.startDate.value = Client.changeDateFormat(Client.today)
+  Client.endDate.value = Client.changeDateFormat(Client.tomorrow)
+  Client.generateBtn.value = 'submit'
+  Client.generateBtn.disabled = false;
 
 
-function generateTable(results) {
-  //console.log(results);
-  let tableContenet = `<tr><th colspan="5" style="text-align: center;">Sentence list Table</th></tr><tr><th>Nr</th><th>Text</th><th>Confidence</th><th>Score tag</th><th>Agreement</th></tr>`
-  for (let i = 0; i < results.sentence_list.length; i++) {
-    tableContenet = tableContenet + `<tr><th>${i + 1}</th><th>${results.sentence_list[i].text}</th><th>${results.sentence_list[i].confidence}</th><th>${results.sentence_list[i].score_tag}</th><th>${results.sentence_list[i].agreement}</th></tr>`
-  }
-  return `<table style="width:100%">${tableContenet}</table>`
 
 }
 
 
 
+
+/***/ }),
+
+/***/ "./src/client/media/facebook.png":
+/*!***************************************!*\
+  !*** ./src/client/media/facebook.png ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("imgs/facebook.png");
 
 /***/ }),
 
@@ -861,6 +1008,34 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ __webpack_exports__["default"] = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_base_scss__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./src/client/styles/cards.scss":
+/*!**************************************!*\
+  !*** ./src/client/styles/cards.scss ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_cards_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./cards.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/client/styles/cards.scss");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_cards_scss__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_cards_scss__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
