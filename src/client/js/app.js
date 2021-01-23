@@ -7,10 +7,7 @@ const cityInput = document.getElementById('search_input');
 
 async function appfunction(event) {
  tripInfo = { startDate: '', endDate: '', longOfTheTrip: '', howManyDaysWillStart: 'numberOfDays(today, startDate.value)', city: '', geonames: '', pixabay: '', weatherbit: '' }
-
  geonames()
-
-
 };
 
 async function geonames() {
@@ -21,6 +18,8 @@ async function geonames() {
    if (res.geonames.length > 0) {
     Client.generateBtn.value = 'Loading ...'
     Client.generateBtn.disabled = true;
+    Client.luckBtn.value = 'Loading ...'
+    Client.luckBtn.disabled = true;
     tripInfo.city = cityInput.value
     tripInfo.geonames = res.geonames[0]
     tripInfo.startDate = Client.startDate.value

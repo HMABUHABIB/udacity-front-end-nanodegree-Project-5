@@ -22,9 +22,8 @@ function generateTripCard(card) {
   Client.endDate.value = Client.changeDateFormat(Client.tomorrow)
   Client.generateBtn.value = 'submit'
   Client.generateBtn.disabled = false;
-
-
-
+  Client.luckBtn.value = "I'm Feeling Lucky"
+  Client.luckBtn.disabled = false;
 }
 
 export { generateTripCard }
