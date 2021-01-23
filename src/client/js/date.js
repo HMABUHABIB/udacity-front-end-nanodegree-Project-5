@@ -1,24 +1,26 @@
 let today = new Date();
 let tomorrow = new Date();
 tomorrow.setDate(today.getDate() + 1);
+let dayAfterTomorrow = new Date();
+dayAfterTomorrow.setDate(today.getDate() + 2);
 let maxStartDate = new Date();
 maxStartDate.setDate(today.getDate() + 15);
 maxStartDate = changeDateFormat(maxStartDate);
+
 const startDate = document.querySelector('#start-date');
 const endDate = document.querySelector('#end-date');
-
-
-
 document.addEventListener('DOMContentLoaded', function () {
 
  startDate.addEventListener("change", function () {
   if (startDate.value < changeDateFormat(today)) {
    alert("Sorry till now we can't travel to the past!")
-   startDate.min = startDate.value = changeDateFormat(today)
+   startDate.min = startDate.value = changeDateFormat(tomorrow)
   }
-  if (startDate.value > endDate.value) {
+  if (startDate.value > endDate.value || startDate.value < endDate.value) {
    endDate.min = startDate.value
    endDate.value = startDate.value
+
+
   }
 
   if (numberOfDays(changeDateFormat(today), startDate.value) > 15) {
@@ -61,4 +63,4 @@ function numberOfDays(startDate, endDate) {
 }
 
 
-export { today, tomorrow, maxStartDate, changeDateFormat, numberOfDays }
+export { today, tomorrow, dayAfterTomorrow, maxStartDate, changeDateFormat, numberOfDays }
