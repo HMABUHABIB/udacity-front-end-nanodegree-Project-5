@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
    endDate.min = startDate.value
    endDate.value = startDate.value
   }
-  console.log(numberOfDays(changeDateFormat(today), startDate.value))
+
   if (numberOfDays(changeDateFormat(today), startDate.value) > 15) {
    alert('Please choose a start date for the trip within 16 days max.')
    startDate.min = startDate.value = changeDateFormat(today)
