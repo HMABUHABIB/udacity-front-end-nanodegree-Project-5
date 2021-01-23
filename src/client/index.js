@@ -33,7 +33,6 @@ luckBtn.addEventListener('click', function (event) {
 });
 const generateBtn = document.querySelector('#submit');
 generateBtn.addEventListener('click', function (event) {
-
  handleSubmit(event)
 });
 
