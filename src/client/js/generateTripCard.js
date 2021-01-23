@@ -14,7 +14,7 @@ function generateTripCard(card) {
            <p>The trip start within :${card.howManyDaysWillStart} day/s in:${card.startDate} till:${card.endDate} for:${card.longOfTheTrip} day/s</p>
            <p>Enjoy your stay in :${geonames.countryName}</p>
            <p>Temp:${weatherbit.temp} Max temp: ${weatherbit.max_temp} Low temp: ${weatherbit.low_temp} </p>
-           <img src="${pixabay.hits[0].previewURL}" alt="Girl in a jacket" width="500" height="600">
+           <img src="${pixabay.hits[getRandomInt(pixabay.hits.length)].webformatURL}" alt="Girl in a jacket" width="500" height="600">
           
          </section>`+ section.innerHTML;
   cityInput.value = ''
@@ -24,6 +24,14 @@ function generateTripCard(card) {
   Client.generateBtn.disabled = false;
   Client.luckBtn.value = "I'm Feeling Lucky"
   Client.luckBtn.disabled = false;
+}
+
+function nameOfRandomePlace() {
+  return places[getRandomInt(places.length)]
+}
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
 }
 
 export { generateTripCard }
