@@ -70,7 +70,7 @@ app.get('/geonames', async (req, res) => {
         });
 
         const newData = await response.json();
-        console.log(req.query.city);
+        //console.log(req.query.city);
         res.json(newData)
 
     } catch (error) {
@@ -94,9 +94,9 @@ app.get('/weatherbit', async (req, res) => {
         });
 
         const newData = await response.json();
-        console.log(req.query.days);
+        //console.log(req.query.days);
         res.json(newData.data[req.query.days])
-        console.log(newData)
+        // console.log(newData)
     } catch (error) {
         console.log("weatherbit error", error);
     }
@@ -115,5 +115,19 @@ app.get('/pixabay', async (req, res) => {
     }
 
 })
+//restcountries
+
+app.get('/restcountries', async (req, res) => {
+    try {
+        const response = await axios.get('https://restcountries.eu/rest/v2/name/' + req.query.name + '');
+        //console.log(response);
+        res.send(response.data)
+    } catch (error) {
+
+        res.send('restcountries error')
+    }
+
+})
+
 
 module.exports = app

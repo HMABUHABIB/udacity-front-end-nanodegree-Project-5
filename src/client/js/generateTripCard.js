@@ -1,12 +1,13 @@
 const cityInput = document.getElementById('search_input');
 const section = document.getElementById('cards');
-let geonames = '', pixabay = '', weatherbit = '';
+let geonames = '', pixabay = '', weatherbit = '', randomImg = '', restcountries = '';
 
 function generateTripCard(card) {
   //console.log(card);
   geonames = card.geonames
-  pixabay = card.pixabay
+  randomImg = card.pixabay.hits[getRandomInt(card.pixabay.hits.length)]
   weatherbit = card.weatherbit
+  restcountries = card.restcountries[0]
 
   section.innerHTML = `<section id="card" data-id="1">
            <h2 id="results">${geonames.name}</h2>
@@ -14,8 +15,11 @@ function generateTripCard(card) {
            <p>The trip start within :${card.howManyDaysWillStart} day/s in:${card.startDate} till:${card.endDate} for:${card.longOfTheTrip} day/s</p>
            <p>Enjoy your stay in :${geonames.countryName}</p>
            <p>Temp:${weatherbit.temp} Max temp: ${weatherbit.max_temp} Low temp: ${weatherbit.low_temp} </p>
-           <img src="${pixabay.hits[getRandomInt(pixabay.hits.length)].webformatURL}" alt="Girl in a jacket" width="500" height="600">
-          
+           
+           <img src="${restcountries.flag}" width="300" height="auto">
+           <a href="${randomImg.pageURL}">
+           <img src="${randomImg.webformatURL}" alt="${randomImg.tags}" width="500" height="600">
+        </a>
          </section>`+ section.innerHTML;
   cityInput.value = ''
   Client.startDate.value = Client.changeDateFormat(Client.today)

@@ -6,7 +6,7 @@ let serverLink = 'https://travel-app.glitch.me'
 const cityInput = document.getElementById('search_input');
 
 async function appfunction(event) {
- tripInfo = { startDate: '', endDate: '', longOfTheTrip: '', howManyDaysWillStart: 'numberOfDays(today, startDate.value)', city: '', geonames: '', pixabay: '', weatherbit: '' }
+ tripInfo = { startDate: '', endDate: '', longOfTheTrip: '', howManyDaysWillStart: 'numberOfDays(today, startDate.value)', city: '', geonames: '', pixabay: '', weatherbit: '', restcountries: '' }
  geonames()
 };
 
@@ -60,11 +60,23 @@ async function pixabay(query) {
    }
    else {
     tripInfo.pixabay = res
-    Client.tripsList.push(tripInfo)
-    printtripInfo()
+    restcountries(tripInfo.geonames.countryName)
    }
   })
 }
+
+async function restcountries(query) {
+
+ fetch('' + serverLink + '/restcountries?name=' + query + '')
+  .then(res => res.json())
+  .then(function (res) {
+   tripInfo.restcountries = res
+   Client.tripsList.push(tripInfo)
+   printtripInfo()
+  }
+  )
+}
+
 
 
 async function printtripInfo() {
@@ -75,6 +87,7 @@ async function printtripInfo() {
 
  }
  else {
+  console.log(Client.tripsList);
   Client.generateTripCard(Client.tripsList[Client.tripsList.length - 1])
  }
 

@@ -134,8 +134,8 @@ const places = ["	Hong Kong	",
  "	Ghana	",
  "	Ecuador	",
  "	China	",
- "	China	",
- "	United States	",]
+ "	China	"
+]
 function nameOfRandomePlace() {
  return places[getRandomInt(places.length)]
 }
