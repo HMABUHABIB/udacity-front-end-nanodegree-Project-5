@@ -1,7 +1,7 @@
 
 let tripInfo;
-let serverLink = 'https://travel-app.glitch.me'
-//let serverLink = 'http://localhost:8081'
+//let serverLink = 'https://travel-app.glitch.me'
+let serverLink = 'http://localhost:8081'
 
 const cityInput = document.getElementById('search_input');
 

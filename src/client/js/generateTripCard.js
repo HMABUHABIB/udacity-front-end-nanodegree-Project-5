@@ -29,7 +29,7 @@ function generateTripCard(card) {
         </a>
         </div>
          </section>`+ section.innerHTML;
-  localStorage.setItem("sectioninnerHTML", section.innerHTML);
+  //localStorage.setItem("sectioninnerHTML", section.innerHTML);
 
   cityInput.value = ''
   Client.restDate()

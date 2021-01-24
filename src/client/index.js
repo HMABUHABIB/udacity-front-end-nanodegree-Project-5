@@ -17,7 +17,7 @@ const cityInput = document.getElementById('search_input');
 const note = document.getElementById('note');
 let tripsList = []
 document.addEventListener('DOMContentLoaded', (event) => {
- document.getElementById("cards").innerHTML = localStorage.getItem("sectioninnerHTML");
+ //document.getElementById("cards").innerHTML = localStorage.getItem("sectioninnerHTML");
  restDate()
  tripsList = []
 });
