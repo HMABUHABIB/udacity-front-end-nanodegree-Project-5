@@ -18,12 +18,15 @@ const note = document.getElementById('note');
 let tripsList = []
 document.addEventListener('DOMContentLoaded', (event) => {
  document.getElementById("cards").innerHTML = localStorage.getItem("sectioninnerHTML");
- startDate.min = startDate.value = changeDateFormat(tomorrow)
- startDate.max = maxStartDate
- endDate.min = endDate.value = changeDateFormat(dayAfterTomorrow)
+ restDate()
  tripsList = []
 });
 
+function restDate() {
+ startDate.min = startDate.value = changeDateFormat(tomorrow)
+ startDate.max = maxStartDate
+ endDate.min = endDate.value = changeDateFormat(dayAfterTomorrow)
+}
 
 const luckBtn = document.querySelector('#luck');
 luckBtn.addEventListener('click', function (event) {
@@ -39,7 +42,7 @@ generateBtn.addEventListener('click', function (event) {
 document.addEventListener("click", removeListener);
 function removeListener(event) {
  if (event.target.classList.contains("remove")) {
-  event.target.parentNode.remove();
+  event.target.parentNode.parentNode.remove();
   localStorage.setItem("sectioninnerHTML", document.getElementById("cards").innerHTML);
  }
 
@@ -51,7 +54,7 @@ export {
  today, tomorrow, dayAfterTomorrow, maxStartDate, changeDateFormat, numberOfDays, startDate, endDate,
  tripsList, generateBtn, luckBtn,
  appfunction,
- nameOfRandomePlace,
+ nameOfRandomePlace, restDate,
  note
 
 }

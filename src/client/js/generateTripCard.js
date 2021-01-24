@@ -9,28 +9,34 @@ function generateTripCard(card) {
   weatherbit = card.weatherbit
   restcountries = card.restcountries[0]
 
-  section.innerHTML = `<section id="card" data-id="1">
-  
+  section.innerHTML = `<section id="card" class="glass" data-id="1">
+           <div id="card-head">
            <h2 id="results">${geonames.name}</h2>
-           <button class="remove" type="button">remove!</button>
-           <p>The trip start within :${card.howManyDaysWillStart} day/s in:${card.startDate} till:${card.endDate} for:${card.longOfTheTrip} day/s</p>
-           <p>Enjoy your stay in :${geonames.countryName}</p>
-           <p>Temp:${weatherbit.temp} Max temp: ${weatherbit.max_temp} Low temp: ${weatherbit.low_temp} </p>
-           <img src="${restcountries.flag}" width="300" height="auto">
+           <button class="remove btn fas fa-trash-alt" type="button"></button>
+           </div>
+           <div class="trip-data-div">
+           <div class="trip-data-text">
+           <h3>Here are the details for your trip to: <strong>${geonames.name}</strong></h3>
+           <p>The trip start within :${card.howManyDaysWillStart} day/s in: ${card.startDate} <br>For: ${card.longOfTheTrip} day/s till: ${card.endDate}</p>
+           <p>The temperature is: ${weatherbit.temp} with max: ${weatherbit.max_temp}  and min: ${weatherbit.low_temp}</p>
+           <p>Enjoy your stay in: ${geonames.countryName} and dont forget to have some ${restcountries.currencies[0].name} with you it's their currencies.</p>
+           </div>
+           <img class="img-flage" src="${restcountries.flag}">
+           </div>
+           <div class="img-pixabay-div">
            <a href="${randomImg.pageURL}">
-           <img src="${randomImg.webformatURL}" alt="${randomImg.tags}" width="500" height="600">
+           <img src="${randomImg.webformatURL}" alt="${randomImg.tags}" class="img-pixabay">
         </a>
+        </div>
          </section>`+ section.innerHTML;
   localStorage.setItem("sectioninnerHTML", section.innerHTML);
 
   cityInput.value = ''
-  Client.startDate.value = Client.changeDateFormat(Client.today)
-  Client.endDate.value = Client.changeDateFormat(Client.tomorrow)
+  Client.restDate()
   Client.generateBtn.value = 'submit'
   Client.generateBtn.disabled = false;
   Client.luckBtn.value = "I'm Feeling Lucky"
   Client.luckBtn.disabled = false;
-
   i++
 }
 
@@ -39,4 +45,4 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
-export { generateTripCard }
+export { generateTripCard, getRandomInt }

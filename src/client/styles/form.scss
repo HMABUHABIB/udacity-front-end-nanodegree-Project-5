@@ -1,27 +1,46 @@
 form {
-  border: 1px solid #545454;
-  border-radius: 3px;
+  border-radius: 1rem;
   padding: 40px;
-}
-
-input {
-  padding: 5px 20px;
-  width: 100%;
-  line-height: 16px;
-  margin: 10px 0;
+  width: 400px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
 }
 
 #date-field {
   display: flex;
+  flex-direction: column;
+}
+#start-date,
+#end-date,
+label {
+  border-radius: 10px;
+  width: 200px;
+  margin: auto;
+  margin-top: 10px;
+  font-size: 1.5em;
+  border-width: 0px;
+  padding: 5px;
 }
 
-#start-date,
-#end-date {
-  width: fit-content;
+label {
+  text-align: center;
+}
+
+.city-input {
+  border-radius: 10px;
+  font-size: 1.5em;
+  width: 300px;
   margin: auto;
 }
-#submit {
+
+#submit,
+#luck {
+  border-radius: 10px;
+
+  font-size: 1.5em;
   width: fit-content;
-  position: relative;
   margin: auto;
+  margin-top: 10px;
 }

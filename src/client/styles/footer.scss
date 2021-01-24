@@ -3,9 +3,15 @@ footer {
   grid-area: footer;
   font-size: 30px;
   text-align: center;
-  background-color: cadetblue;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
   width: fit-content;
+  height: fit-content;
   margin: auto;
-  padding: 25px;
-  border-radius: 25px;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  padding: 20px;
 }

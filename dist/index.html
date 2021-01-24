@@ -3,6 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <title>FEND Capstone - Travel App</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"></head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
   </head>
 
   <body>
@@ -13,14 +19,14 @@
 
     <main>
       <section>
-        <form class="" onsubmit="return Client.handleSubmit(event)">
-          <label>Location:</label>
-    <input type="text" class="form-control" id="search_input" placeholder="Enter your destination" required/>
+        <form class="glass" onsubmit="return Client.handleSubmit(event)">
+         
+    <input type="text" class="form-control city-input" id="search_input" placeholder="Enter your destination" required/>
    </div>
   
         <div id="date-field">
 
-          <label for="start">Start date:</label>
+          <label for="start">Start date</label>
           <input
             type="date"
             id="start-date"
@@ -29,7 +35,7 @@
             max="2025-12-31"
             required
           />
-          <label for="end">End date:</label>
+          <label for="end">End date</label>
           <input
             type="date"
             id="end-date"
@@ -42,6 +48,7 @@
         </div>
           
         <input
+        class="btn btn-light"
         type="submit"
         name=""
         id="submit"
@@ -50,6 +57,7 @@
         onsubmit=""
       />
       <input
+      class="btn btn-light"
         type="submit"
         name=""
         id="luck"
@@ -57,26 +65,28 @@
         onclick=""
         onsubmit=""
       />
-      <label id="note">Note:</label>
+
+      <!-- <label id="note">Note:</label> -->
         </form>
       </section>
-
-    
       <section id="cards">
-        
-      </section>
-
+        <!-- //* card section*// -->
    
+      </section>
 
     </main>
 
     <footer>
       <p>
-        Udacity Frontend Nanodegree Project - 5<br />
-        News Article With Natural Lang<br />
-        By:Husam Abuhabib
+        Udacity Frontend Nanodegree Project - 5 Travel App By:Husam Abuhabib
       </p>
     </footer>
-
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js');
+        });
+      }
+    </script>
   <script type="text/javascript" src="main.js"></script></body>
 </html>
