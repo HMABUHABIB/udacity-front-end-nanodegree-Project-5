@@ -27,7 +27,28 @@ API_KEY_Pixabay= ****
 restcountries => without key
 ```
 
-- Run <npm install>
+- Run the command to install all needed packages.
+
+```
+npm install
+```
+
+- After that you can start the app here some npm command that can be used:
+
+```
+npm test => to run testing using jest.
+npm run dev-server => To deploy the development server and then open the app.
+npm run  build-dev => To deploy the development server the.
+npm run  build-prod => To deploy the production server the.
+npm start => To run the nod server
+```
+
+## App demo photo
+
+![First-page](/demo-img/First-page.png?raw=true 'First-page')
+![success](/demo-img/success.png?raw=true 'success')
+![trips](/demo-img/trips.png?raw=true 'trips')
+![invalid-city](/demo-img/invalid-city.png?raw=true 'invalid-city')
 
 ## Author
 
