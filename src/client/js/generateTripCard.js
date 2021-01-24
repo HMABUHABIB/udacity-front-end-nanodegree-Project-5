@@ -10,7 +10,7 @@ function generateTripCard(card) {
   restcountries = card.restcountries[0]
 
   section.innerHTML = `<section id="card" data-id="1">
-  <h2 id="results">${i}</h2>
+  
            <h2 id="results">${geonames.name}</h2>
            <button class="remove" type="button">remove!</button>
            <p>The trip start within :${card.howManyDaysWillStart} day/s in:${card.startDate} till:${card.endDate} for:${card.longOfTheTrip} day/s</p>
@@ -21,6 +21,8 @@ function generateTripCard(card) {
            <img src="${randomImg.webformatURL}" alt="${randomImg.tags}" width="500" height="600">
         </a>
          </section>`+ section.innerHTML;
+  localStorage.setItem("sectioninnerHTML", section.innerHTML);
+
   cityInput.value = ''
   Client.startDate.value = Client.changeDateFormat(Client.today)
   Client.endDate.value = Client.changeDateFormat(Client.tomorrow)

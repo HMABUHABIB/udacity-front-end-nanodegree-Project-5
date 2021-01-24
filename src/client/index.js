@@ -17,8 +17,7 @@ const cityInput = document.getElementById('search_input');
 const note = document.getElementById('note');
 let tripsList = []
 document.addEventListener('DOMContentLoaded', (event) => {
- document.cookie = "Secure";
- document.cookie = "SameSite=None;"
+ document.getElementById("cards").innerHTML = localStorage.getItem("sectioninnerHTML");
  startDate.min = startDate.value = changeDateFormat(tomorrow)
  startDate.max = maxStartDate
  endDate.min = endDate.value = changeDateFormat(dayAfterTomorrow)
@@ -41,6 +40,7 @@ document.addEventListener("click", removeListener);
 function removeListener(event) {
  if (event.target.classList.contains("remove")) {
   event.target.parentNode.remove();
+  localStorage.setItem("sectioninnerHTML", document.getElementById("cards").innerHTML);
  }
 
 }
