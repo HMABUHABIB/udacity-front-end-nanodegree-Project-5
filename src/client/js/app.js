@@ -1,7 +1,6 @@
 
 let tripInfo;
-//let serverLink = 'https://travel-app.glitch.me'
-let serverLink = 'http://localhost:8081'
+
 
 const cityInput = document.getElementById('search_input');
 
@@ -14,7 +13,7 @@ async function appfunction(event) {
 async function geonames() {
   try {
 
-    fetch('' + serverLink + '/geonames?city=' + cityInput.value + '')
+    fetch('' + Client.serverLink + '/geonames?city=' + cityInput.value + '')
       .then(res => res.json())
       .then(function (res) {
         if (res.geonames.length > 0) {
@@ -54,7 +53,7 @@ async function weatherbit() {
 
   try {
 
-    fetch('' + serverLink + '/weatherbit?lat=' + tripInfo.geonames.lat + '&lon=' + tripInfo.geonames.lng + '&days=' + tripInfo.howManyDaysWillStart + '')
+    fetch('' + Client.serverLink + '/weatherbit?lat=' + tripInfo.geonames.lat + '&lon=' + tripInfo.geonames.lng + '&days=' + tripInfo.howManyDaysWillStart + '')
       .then(res => res.json())
       .then(function (res) {
         tripInfo.weatherbit = res
@@ -71,7 +70,7 @@ async function weatherbit() {
 
 async function pixabay(query) {
   try {
-    fetch('' + serverLink + '/pixabay?place=' + query + '')
+    fetch('' + Client.serverLink + '/pixabay?place=' + query + '')
       .then(res => res.json())
       .then(function (res) {
         if (res.total == 0) {
@@ -92,7 +91,7 @@ async function pixabay(query) {
 
 async function restcountries(query) {
   try {
-    fetch('' + serverLink + '/restcountries?name=' + query + '')
+    fetch('' + Client.serverLink + '/restcountries?name=' + query + '')
       .then(res => res.json())
       .then(function (res) {
         tripInfo.restcountries = res
@@ -120,7 +119,8 @@ async function printtripInfo() {
     }
     else {
       postData()
-      Client.getTripData()
+      //Client.getTripData()
+      Client.generateTripCard(tripInfo)
     }
   } catch (error) {
     alert("Error in printtripInfo function");
@@ -133,7 +133,7 @@ async function printtripInfo() {
 
 // Post the trip data to server side
 async function postData() {
-  const response = await fetch('' + serverLink + '/creatNewTrip', {
+  const response = await fetch('' + Client.serverLink + '/creatNewTrip', {
     method: 'POST',
     credentials: 'same-origin',
     headers: {

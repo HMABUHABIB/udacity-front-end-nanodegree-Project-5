@@ -44,12 +44,12 @@ function generateTripCard(card) {
 // To get the trip data from the server
 async function getTripData() {
 
-  const res = await fetch(`http://localhost:8081/getTripData`)
+  const res = await fetch('' + Client.serverLink + '/getTripData')
 
   try {
     const data = await res.json();
 
-    generateTripCard(data)
+    //generateTripCard(data)
     return data;
   } catch (error) {
     console.log("Error in getAlldata", error);

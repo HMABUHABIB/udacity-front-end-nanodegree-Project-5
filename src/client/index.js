@@ -11,6 +11,9 @@ import './styles/form.scss'
 import './styles/header.scss'
 import './styles/cards.scss'
 
+let serverLink = 'https://travel-app.glitch.me'
+//let serverLink = 'http://localhost:8081'
+
 const startDate = document.querySelector('#start-date');
 const endDate = document.querySelector('#end-date');
 const cityInput = document.getElementById('search_input');
@@ -49,6 +52,7 @@ function removeListener(event) {
 }
 
 export {
+ serverLink,
  generateTripCard, getTripData,
  handleSubmit,
  today, tomorrow, dayAfterTomorrow, maxStartDate, changeDateFormat, numberOfDays, startDate, endDate,
