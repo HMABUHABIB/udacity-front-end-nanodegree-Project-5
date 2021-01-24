@@ -28,6 +28,7 @@ async function geonames() {
           tripInfo.endDate = Client.endDate.value
           tripInfo.howManyDaysWillStart = Client.numberOfDays(Client.today, Client.startDate.value)
           tripInfo.longOfTheTrip = Client.numberOfDays(Client.startDate.value, Client.endDate.value)
+
           return 1;
         }
         else {
@@ -36,18 +37,17 @@ async function geonames() {
         }
 
       })
+
       .then(weatherbit)
 
 
   } catch (error) {
+    alert("Error in geonames function");
     console.log("Error in geonames function", error);
-
   }
 
-
-
-
 }
+
 
 
 async function weatherbit() {
@@ -62,6 +62,7 @@ async function weatherbit() {
       .then(pixabay(tripInfo.city))
 
   } catch (error) {
+    alert("Error in weatherbit function");
     console.log("Error in weatherbit function", error);
 
   }
@@ -83,6 +84,7 @@ async function pixabay(query) {
       })
 
   } catch (error) {
+    alert("Error in pixabay function");
     console.log("Error in pixabay function", error);
 
   }
@@ -95,11 +97,13 @@ async function restcountries(query) {
       .then(function (res) {
         tripInfo.restcountries = res
         Client.tripsList.push(tripInfo)
+
         printtripInfo()
       }
       )
 
   } catch (error) {
+    alert("Error in restcountries function");
     console.log("Error in restcountries function", error);
 
   }
@@ -115,14 +119,35 @@ async function printtripInfo() {
 
     }
     else {
-
-      Client.generateTripCard(Client.tripsList[Client.tripsList.length - 1])
+      postData()
+      Client.getTripData()
     }
   } catch (error) {
+    alert("Error in printtripInfo function");
     console.log("Error in printtripInfo function", error);
 
   }
 
 }
 
+
+// Post the trip data to server side
+async function postData() {
+  const response = await fetch('' + serverLink + '/creatNewTrip', {
+    method: 'POST',
+    credentials: 'same-origin',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(tripInfo),
+  });
+
+  try {
+    const newData = await response.json();
+
+    return newData;
+  } catch (error) {
+    console.log("error", error);
+  }
+}
 export { appfunction }

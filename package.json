@@ -17,7 +17,7 @@
     "test:watch": "jest --watch"
   },
   "keywords": [],
-  "author": "",
+  "author": "Husam Abuhabib",
   "license": "ISC",
   "description": "",
   "dependencies": {

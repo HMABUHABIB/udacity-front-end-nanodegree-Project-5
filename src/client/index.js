@@ -1,4 +1,4 @@
-import { generateTripCard } from './js/generateTripCard'
+import { generateTripCard, getTripData } from './js/generateTripCard'
 import { handleSubmit } from './js/formHandler'
 import { appfunction } from './js/app'
 import { today, tomorrow, dayAfterTomorrow, maxStartDate, changeDateFormat, numberOfDays } from './js/date'
@@ -49,7 +49,7 @@ function removeListener(event) {
 }
 
 export {
- generateTripCard,
+ generateTripCard, getTripData,
  handleSubmit,
  today, tomorrow, dayAfterTomorrow, maxStartDate, changeDateFormat, numberOfDays, startDate, endDate,
  tripsList, generateBtn, luckBtn,

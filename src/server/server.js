@@ -8,6 +8,8 @@ const express = require('express')
 const app = express()
 app.use(express.static('dist'))
 
+// Trip Data  Object 
+let tripInfo = { startDate: '', endDate: '', longOfTheTrip: '', howManyDaysWillStart: '', city: '', geonames: '', pixabay: '', weatherbit: '', restcountries: '' }
 
 /* Dependencies */
 const bodyParser = require('body-parser');
@@ -40,8 +42,27 @@ app.post('/test2', async (req, res) => {
     res.json({ zip: req.query.zip })
 })
 
-
 // RESTful API
+app.post('/creatNewTrip', async (req, res) => {
+
+    tripInfo.startDate = req.body.startDate,
+        tripInfo.endDate = req.body.endDate,
+        tripInfo.longOfTheTrip = req.body.longOfTheTrip,
+        tripInfo.howManyDaysWillStart = req.body.howManyDaysWillStart,
+        tripInfo.restcountries = req.body.restcountries,
+        tripInfo.weatherbit = req.body.weatherbit,
+        tripInfo.pixabay = req.body.pixabay,
+        tripInfo.geonames = req.body.geonames,
+        tripInfo.city = req.body.city,
+        console.log(tripInfo)
+    res.json(tripInfo)
+})
+
+
+app.get('/getTripData', function (request, response) {
+    response.send(tripInfo)
+}
+);
 
 // openweathermap
 app.get('/openweathermap', async (req, res) => {

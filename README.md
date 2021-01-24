@@ -2,8 +2,8 @@
 
 ## Description
 
-This project takes a user's destination location and travel dates.
-This will return a weather forecast for the trip and some more data about the destination.
+This project takes a user's destination and travel dates.
+Then will return to the user a weather forecast for the trip and some more data about the destination.
 The user has the ability to click on I'm Feeling Lucky to return a random destination.
 There are 4 APIs used in this project:
 

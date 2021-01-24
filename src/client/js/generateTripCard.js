@@ -1,7 +1,8 @@
 const cityInput = document.getElementById('search_input');
 const section = document.getElementById('cards');
-let geonames = '', pixabay = '', weatherbit = '', randomImg = '', restcountries = '';
+let geonames = '', weatherbit = '', randomImg = '', restcountries = '';
 let i = 0
+
 function generateTripCard(card) {
 
   geonames = card.geonames
@@ -40,9 +41,24 @@ function generateTripCard(card) {
   i++
 }
 
+// To get the trip data from the server
+async function getTripData() {
+
+  const res = await fetch(`http://localhost:8081/getTripData`)
+
+  try {
+    const data = await res.json();
+
+    generateTripCard(data)
+    return data;
+  } catch (error) {
+    console.log("Error in getAlldata", error);
+    // appropriately handle the error
+  }
+}
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
-export { generateTripCard, getRandomInt }
+export { generateTripCard, getRandomInt, getTripData }
