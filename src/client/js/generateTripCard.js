@@ -3,7 +3,7 @@ const section = document.getElementById('cards');
 let geonames = '', pixabay = '', weatherbit = '', randomImg = '', restcountries = '';
 let i = 0
 function generateTripCard(card) {
-  //console.log(card);
+
   geonames = card.geonames
   randomImg = card.pixabay.hits[getRandomInt(card.pixabay.hits.length)]
   weatherbit = card.weatherbit
@@ -29,7 +29,7 @@ function generateTripCard(card) {
         </a>
         </div>
          </section>`+ section.innerHTML;
-  //localStorage.setItem("sectioninnerHTML", section.innerHTML);
+
 
   cityInput.value = ''
   Client.restDate()
